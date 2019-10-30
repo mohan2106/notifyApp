@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String CHANNEL_ID = "mohan";
     private static final String CHANNEL_NAME = "mohan";
     private static final String CHANNEL_DESC = "mohan notification";
-    private Button btn;
+    private Button btn,btn2;
 
     private EditText email;
     private EditText password;
@@ -37,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
         sport = findViewById(R.id.sports);
         gen = findViewById(R.id.general);
         btn = findViewById(R.id.button);
-
+        btn2 = findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,NotificationLog.class));
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
