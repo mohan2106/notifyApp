@@ -10,13 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 
 public class notiAdapter extends RecyclerView.Adapter<notiAdapter.ViewHolder> {
     private ArrayList<notiClass> itemList;
     private Context context;
 
-    public notiAdapter(ArrayList<notiClass> itemList, Context context) {
+    public notiAdapter(ArrayList<notiClass> itemList,Context context) {
         this.itemList = itemList;
         this.context = context;
     }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.example.notify.MainActivity;
+import com.example.notify.NotificationLog;
 import com.example.notify.utils.NotificationUtils;
 import com.example.notify.vo.NotificationVO;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -46,7 +47,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationVO.setTitle(title);
         notificationVO.setMessage(message);
 
-        Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent resultIntent = new Intent(getApplicationContext(), NotificationLog.class);
         NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
         notificationUtils.displayNotification(notificationVO, resultIntent);
         notificationUtils.playNotificationSound();
@@ -65,7 +66,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationVO.setAction(action);
         notificationVO.setActionDestination(actionDestination);
 
-        Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent resultIntent = new Intent(getApplicationContext(), NotificationLog.class);
 
         NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
         notificationUtils.displayNotification(notificationVO, resultIntent);
